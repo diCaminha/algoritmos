@@ -10,24 +10,23 @@ public class Selection {
         selection.sort(numbers);
         long elapsedTime = System.nanoTime() - startTime;
         System.out.println(elapsedTime);
+        System.out.println(numbers[0] + "," + numbers[1] + "," + numbers[2] + "," + numbers[3]);
     }
 
     public void sort(int[] numbers) {
         int aux = 0;
         for (int k = 0; k < numbers.length; k++) {
-            var smaller = numbers[k];
             var posMenor = k;
             for (int i = k; i < numbers.length; i++) {
-                if (numbers[i] < menor]) {
-                    menor = numbers[i];
+                if (numbers[i] < numbers[posMenor]) {
                     posMenor = i;
                 }
             }
             aux = numbers[k];
-            numbers[i-1] = numbers[i];
-            numbers[i] = aux;
+            numbers[k] = numbers[posMenor];
+             numbers[posMenor] = aux;
         }
     }
-    }
-}
+    
+
 }
